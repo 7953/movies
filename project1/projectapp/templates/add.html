@@ -1,0 +1,35 @@
+{% extends 'baase.html' %}
+
+{% block body %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Add New Movie</h2>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="name">Movie Name:</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your movie name">
+            </div>
+            <div class="form-group">
+              <label for="desc">Description:</label>
+              <input type="text" class="form-control" id="desc" name="desc" placeholder="About it">
+            </div>
+            <div class="form-group">
+              <label for="year">Year:</label>
+              <input type="number" class="form-control" id="year" name="year">
+            </div>
+            <div class="form-group">
+              <label for="img">Image:</label>
+              <input type="file" class="form-control-file" id="img" name="img">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
